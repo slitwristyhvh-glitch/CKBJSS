@@ -1,0 +1,65 @@
+// 🌴 C.K.B. Digital Solitude - CSS Injector & Initialization 🌴
+// This script bypasses the MOTD sanitizer by injecting our custom styling directly into the page's head element.
+
+const ckbStyles = `
+    /* Force Full Page Background */
+    body { 
+        background-image: url('https://files.catbox.moe/n2f1f3.png') !important; 
+        background-attachment: fixed !important; 
+        background-size: cover !important; 
+        background-position: center !important; 
+        background-repeat: no-repeat !important; 
+        background-color: #050505 !important;
+    }
+
+    /* Punching through CyTube's default containers to reveal the background */
+    #main-container, 
+    .container-fluid, 
+    #wrap, 
+    #footer { 
+        background: transparent !important; 
+    }
+
+    /* Core Wrapper - The MOTD Box */
+    .ckb-motd-wrapper { 
+        background-color: rgba(5, 5, 5, 0.6); 
+        color: #e0e0e0; 
+        font-family: 'Consolas', 'Courier New', monospace; 
+        padding: 20px; 
+        border: 1px solid #FF6AD5; 
+        box-shadow: 0 0 10px rgba(255, 106, 213, 0.3), inset 0 0 15px rgba(0, 212, 255, 0.1); 
+        position: relative; 
+        border-radius: 4px; 
+        backdrop-filter: blur(5px);
+        margin-bottom: 20px;
+    }
+    
+    .ckb-top-left-logo { position: absolute; top: -20px; left: -20px; width: 80px; height: auto; border-radius: 8px; box-shadow: 0 0 10px #00D4FF; z-index: 10; }
+    
+    .ckb-box-container { margin-top: 25px; margin-bottom: 15px; border: 1px solid rgba(0, 212, 255, 0.5); background: rgba(10, 10, 15, 0.85); border-radius: 4px; overflow: hidden; }
+    .ckb-box-summary { background: linear-gradient(90deg, #111 0%, #1a1a24 100%); color: #FF6AD5; padding: 12px 15px; cursor: pointer; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #00D4FF; text-shadow: 0 0 8px rgba(255, 106, 213, 0.6); outline: none; }
+    
+    .ckb-mission-title { color: #fff; text-align: center; text-shadow: 0 0 5px #FF6AD5; margin-top: 15px; }
+    .ckb-mission-sub { text-align: center; color: #888; margin-bottom: 15px; font-style: italic; }
+    .ckb-mission-text, .faq-item { padding: 10px 15px; line-height: 1.6; }
+    .ckb-highlight { color: #00D4FF; text-shadow: 0 0 8px rgba(0, 212, 255, 0.6); font-weight: bold; }
+    .ckb-highlight-alt { color: #FF6AD5; text-shadow: 0 0 8px rgba(255, 106, 213, 0.6); font-weight: bold; }
+    
+    .faq-q { color: #FF6AD5; font-weight: bold; margin-bottom: 5px; }
+    .faq-a { color: #ccc; margin-bottom: 10px; border-left: 2px solid #00D4FF; padding-left: 10px; }
+    
+    .ckb-list-title { padding: 0 15px; color: #00D4FF; font-weight: bold; }
+    .ckb-mission-list { list-style-type: none; padding-left: 25px; }
+    .ckb-mission-list li { margin-bottom: 8px; color: #ddd; }
+    .ckb-quote { border-left: 4px solid #FF6AD5; background: rgba(255, 106, 213, 0.05); margin: 15px; padding: 15px; font-style: italic; }
+    
+    .ckb-discord-btn { display: inline-block; background-color: transparent; color: #00D4FF; border: 2px solid #00D4FF; padding: 12px 25px; text-decoration: none; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 5px #00D4FF; box-shadow: 0 0 10px rgba(0, 212, 255, 0.4), inset 0 0 10px rgba(0, 212, 255, 0.2); transition: all 0.3s ease; border-radius: 3px; }
+    .ckb-discord-btn:hover { background-color: #00D4FF; color: #000; box-shadow: 0 0 20px #00D4FF; text-shadow: none; }
+`;
+
+const styleElement = document.createElement('style');
+styleElement.type = 'text/css';
+styleElement.innerHTML = ckbStyles;
+document.head.appendChild(styleElement);
+
+console.log("%c🌴 Project C.K.B. Full-Spectrum Background Loaded 🌴", "color: #FF6AD5; font-size: 14px; font-weight: bold; text-shadow: 0 0 5px #00D4FF; background: #050505; padding: 5px; border-radius: 2px;");
